@@ -1,4 +1,5 @@
 pipeline {
+    
     agent { label "dev"};
     stages{
         stage("code"){
@@ -44,4 +45,23 @@ pipeline {
             
         }
     }
+post{
+        success{
+            script{
+                emailext from: 'mentor@trainwithshubham.com',
+                to: 'mentor@trainwithshubham.com',
+                body: 'Build success for Demo CICD App',
+                subject: 'Build success for Demo CICD App'
+            }
+        }
+        failure{
+            script{
+                emailext from: 'mentor@trainwithshubham.com',
+                to: 'mentor@trainwithshubham.com',
+                body: 'Build Failed for Demo CICD App',
+                subject: 'Build Failed for Demo CICD App'
+            }
+        }
+    }
+
 }
