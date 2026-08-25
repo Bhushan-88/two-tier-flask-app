@@ -45,19 +45,19 @@ pipeline {
             
         }
     }
-post{
+    post{
         success{
             script{
-                emailext from: 'mentor@trainwithshubham.com',
-                to: 'mentor@trainwithshubham.com',
+                emailext from: 'bhushandurgawli1@gmail.com',
+                to: 'bhushandurgawli1@gmail.com',
                 body: 'Build success for Demo CICD App',
                 subject: 'Build success for Demo CICD App'
             }
         }
         failure{
             script{
-                emailext from: 'mentor@trainwithshubham.com',
-                to: 'mentor@trainwithshubham.com',
+                emailext from: 'bhushandurgawli1@gmail.com',
+                to: 'bhushandurgawli1@gmail.com',
                 body: 'Build Failed for Demo CICD App',
                 subject: 'Build Failed for Demo CICD App'
             }
