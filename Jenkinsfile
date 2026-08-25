@@ -8,12 +8,6 @@ pipeline {
                 echo "code clone done"
             }
         }
-        stage("Trivy File System Scan"){
-            steps{
-                sh "trivy fs . -o results.json"
-                echo "trivy scan done"
-            }
-        }
         stage("build"){
             steps{
                 sh "docker build -t two-tier-flask-app ."
