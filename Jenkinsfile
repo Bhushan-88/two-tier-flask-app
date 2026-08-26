@@ -11,10 +11,11 @@ pipeline {
                 }
             }
         }
-        stage("trivy scan"){
+        stage("Trivy File System Scan"){
             steps{
-                sh "trivy fs . -o results.json"
-                echo "trivy scan done"
+                script{
+                    trivy_fs()
+                }
             }
         }
         stage("build"){
